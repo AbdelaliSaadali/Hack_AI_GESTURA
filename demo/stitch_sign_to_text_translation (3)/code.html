@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestura - Interactive Lesson</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 flex flex-col h-screen overflow-hidden">
+<!-- Header Section -->
+<header class="flex flex-col gap-2 p-4 bg-background-light dark:bg-background-dark shrink-0">
+<div class="flex items-center justify-between">
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="text-base font-bold text-center flex-1 truncate px-2">Lesson 1: Basic Greetings</h1>
+<button class="flex items-center justify-center size-10 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 transition-colors text-slate-900 dark:text-slate-100">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="flex items-center gap-3 px-2">
+<div class="flex-1 h-2 bg-slate-200 dark:bg-slate-700 rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 35%;"></div>
+</div>
+<span class="text-xs font-medium text-slate-500 dark:text-slate-400">3/8</span>
+</div>
+</header>
+<!-- Main Content - Split Screen -->
+<main class="flex-1 flex flex-col gap-4 px-4 overflow-y-auto pb-4">
+<!-- Top Half: Reference -->
+<div class="flex flex-col gap-3 shrink-0">
+<div class="relative w-full aspect-video bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden shadow-sm group">
+<!-- Instruction Overlay -->
+<div class="absolute top-3 left-3 bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium z-10 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">visibility</span>
+                    Watch &amp; Learn
+                </div>
+<div class="w-full h-full bg-cover bg-center" data-alt="3D avatar demonstrating sign language gesture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDox3HBi5wsd3miN6XVc5QAjGAG2UHMPTOvHdUcCiSE-BHIPCJrBVCJe4vHIWPu1KgOtAzjubhtsJZpxX8yD-msT_cZxEmJdqewOoyCl4FVQBDnsG-dPOC_jVoRbMimnckyYnChhPiyztVu7JgprOQK1gnf59XDWsbU0jW1lICS8ACtGfSJIHz10yG8KTNSGywD-9n-j3266pVIQb44wrdGDbPACeVa_enPQxl-tjA9MQB_lge2Vkcg1jm00vPgG3Z-1PcDWJM60plX');"></div>
+<div class="absolute bottom-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4 pt-12">
+<h2 class="text-white text-xl font-bold">Hello / Hi</h2>
+<p class="text-slate-200 text-sm">Wave hand side to side</p>
+</div>
+<button class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 size-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-all opacity-0 group-hover:opacity-100">
+<span class="material-symbols-outlined text-3xl">replay</span>
+</button>
+</div>
+</div>
+<!-- Divider / Status -->
+<div class="flex items-center justify-center py-2 shrink-0">
+<div class="bg-primary/10 text-primary dark:bg-primary/20 dark:text-blue-300 px-4 py-1.5 rounded-full text-sm font-semibold flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">videocam</span>
+<span>Your Turn</span>
+</div>
+</div>
+<!-- Bottom Half: User Camera -->
+<div class="flex-1 relative w-full bg-black rounded-xl overflow-hidden shadow-lg border-2 border-slate-200 dark:border-slate-800">
+<!-- Simulated Camera Feed -->
+<div class="w-full h-full bg-cover bg-center opacity-80" data-alt="User front facing camera feed" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAFRM9CExToZh_oB5PVJKTS8zmz-Yi96FeNxJNZshoYpmREd8hBEtMR5dnaqN2lmQYvx2fFiO1tSBzsiFFTfWDW682Qv8wpFaj90J2wbtH6S0M4ZvE51JqNSt_3NA0sH9ew-aYHJIIZ3kvclaF2DJiPQVJFO3oyvKdBhoPl_XhGPUr5k_-q8Z6jXYsbigdhr8bHNBor9B9cdl0p5Ekrp2IDYzC5RX-WZFUvTGNbKepgh6Tyajgwd9vQwVVB-er4n_Z68iRaOT-hoSEd');"></div>
+<!-- Bounding Box Overlay (Simulating AI Detection) -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-4 border-green-500 rounded-xl shadow-[0_0_20px_rgba(34,197,94,0.5)] flex items-center justify-center">
+<div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-green-500 text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider">
+                    Hand Detected
+                 </div>
+<!-- Corner Markers -->
+<div class="absolute -top-1 -left-1 w-4 h-4 border-l-4 border-t-4 border-green-400 rounded-tl"></div>
+<div class="absolute -top-1 -right-1 w-4 h-4 border-r-4 border-t-4 border-green-400 rounded-tr"></div>
+<div class="absolute -bottom-1 -left-1 w-4 h-4 border-l-4 border-b-4 border-green-400 rounded-bl"></div>
+<div class="absolute -bottom-1 -right-1 w-4 h-4 border-r-4 border-b-4 border-green-400 rounded-br"></div>
+</div>
+<!-- Floating Controls for Camera -->
+<div class="absolute bottom-4 right-4 flex flex-col gap-2">
+<button class="size-10 bg-black/40 backdrop-blur text-white rounded-full flex items-center justify-center hover:bg-black/60">
+<span class="material-symbols-outlined text-[20px]">cameraswitch</span>
+</button>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-background-light dark:bg-background-dark p-4 pb-6 pt-2 shrink-0 border-t border-slate-200 dark:border-slate-800/50">
+<div class="flex items-center gap-4">
+<!-- Streak Counter -->
+<div class="flex flex-col items-center justify-center px-3">
+<div class="flex items-center gap-1 text-orange-500 mb-1">
+<span class="material-symbols-outlined text-[20px] fill-current">local_fire_department</span>
+<span class="font-bold text-lg">12</span>
+</div>
+<span class="text-[10px] uppercase font-bold text-slate-400 tracking-wide">Streak</span>
+</div>
+<!-- Main Action Button -->
+<button class="flex-1 h-14 bg-primary hover:bg-blue-600 active:scale-[0.98] transition-all text-white rounded-xl font-bold text-lg shadow-lg shadow-primary/30 flex items-center justify-center gap-2">
+<span>Next Sign</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- "G" letter shape approximation for Gestura -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,28c-14.36,0 -26,11.64 -26,26s11.64,26 26,26c10.49,0 19.53,-6.22 23.63,-15.17L67.37,60.46C64.52,66.94 58.18,72 54,72c-9.94,0 -18,-8.06 -18,-18s8.06,-18 18,-18c4.97,0 9.47,2.01 12.73,5.27L72,36C67.58,31.13 61.13,28 54,28zM54,50v8h18v-8H54z"/>
+</vector>
+

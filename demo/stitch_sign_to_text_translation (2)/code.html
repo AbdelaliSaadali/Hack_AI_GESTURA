@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Gestura - Sign to Text</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#135bec",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"],
+                        "sans": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .material-symbols-outlined.fill {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 overflow-hidden">
+<div class="relative flex h-screen w-full flex-col overflow-hidden bg-black">
+<!-- Full Screen Camera Viewfinder -->
+<div class="absolute inset-0 w-full h-full bg-cover bg-center z-0" data-alt="Person using sign language indoors" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBcU4MdVgMsXbS9M80XvvnD9l_LwpvJO8oDIQ_BzAshyNtMekzkK5LEfq0joPqtbIP7f9Si4bQgmQLAqjHc5Yh-tDpW2jlugQMTQD8tdAQl76MjbpW6aRrJWZ3q09WDBQwaS1GJDWulS6zpIh6e9Mu1vOW8ZWdNyK_t236Er9AIynUZGKtVV8j5u1QugU-oOuQ777aZ23gxECipYBiOinF4nWKfvTVgEtv8k1ih14RJQedsTkhxoiz8GbOe8iRQHyTF3FkI7y3RKUyy');">
+<!-- Overlay gradient for better text visibility at top -->
+<div class="absolute top-0 left-0 w-full h-32 bg-gradient-to-b from-black/60 to-transparent"></div>
+</div>
+<!-- Header (Overlay) -->
+<div class="relative z-10 flex items-center justify-between px-4 py-4 pt-12">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md transition-colors hover:bg-black/60">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h2 class="text-lg font-bold text-white tracking-wide drop-shadow-md">Sign to Text</h2>
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md transition-colors hover:bg-black/60">
+<span class="material-symbols-outlined">settings</span>
+</button>
+</div>
+<!-- Camera Controls & Feedback Area -->
+<div class="relative z-10 mt-auto flex flex-col items-center w-full px-4 pb-4">
+<!-- Real-time Translation Box (Frosted Glass) -->
+<div class="w-full mb-6 overflow-hidden rounded-2xl bg-white/10 backdrop-blur-xl border border-white/20 shadow-lg">
+<div class="p-6 text-center">
+<p class="text-sm font-medium text-white/70 uppercase tracking-wider mb-2">Translating...</p>
+<h1 class="text-3xl md:text-4xl font-bold text-white leading-tight drop-shadow-sm">
+                        Hello, how can I help you today?
+                    </h1>
+</div>
+<!-- Action Bar within the card -->
+<div class="flex items-center justify-between border-t border-white/10 bg-black/20 px-6 py-3">
+<button class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">content_copy</span>
+<span class="text-sm font-medium">Copy</span>
+</button>
+<button class="flex items-center gap-2 text-white/90 hover:text-white transition-colors">
+<span class="material-symbols-outlined text-[20px]">share</span>
+<span class="text-sm font-medium">Share</span>
+</button>
+</div>
+</div>
+<!-- Floating Action Buttons Row -->
+<div class="flex items-center justify-center gap-6 mb-8 w-full max-w-sm">
+<!-- Clear Button -->
+<button class="flex flex-col items-center gap-1 group">
+<div class="flex h-14 w-14 items-center justify-center rounded-full bg-slate-800/80 text-white backdrop-blur-md shadow-lg border border-slate-700 hover:bg-slate-800 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[24px]">close</span>
+</div>
+<span class="text-xs font-medium text-white drop-shadow-md">Clear</span>
+</button>
+<!-- Speaker / TTS Button (Primary) -->
+<button class="flex flex-col items-center gap-1 group">
+<div class="flex h-20 w-20 items-center justify-center rounded-full bg-primary text-white shadow-xl shadow-primary/30 border-4 border-white/10 hover:bg-primary/90 transition-all active:scale-95">
+<span class="material-symbols-outlined fill text-[36px]">volume_up</span>
+</div>
+<span class="text-xs font-medium text-white drop-shadow-md">Speak</span>
+</button>
+<!-- Flip Camera Button -->
+<button class="flex flex-col items-center gap-1 group">
+<div class="flex h-14 w-14 items-center justify-center rounded-full bg-slate-800/80 text-white backdrop-blur-md shadow-lg border border-slate-700 hover:bg-slate-800 transition-all active:scale-95">
+<span class="material-symbols-outlined text-[24px]">cameraswitch</span>
+</div>
+<span class="text-xs font-medium text-white drop-shadow-md">Flip</span>
+</button>
+</div>
+</div>
+<!-- Bottom Navigation Bar (Adapted to be overlay-style or distinct) -->
+<div class="z-20 border-t border-white/10 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-lg px-4 pb-6 pt-2">
+<div class="flex gap-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 rounded-full text-primary" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined fill">translate</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Translate</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Learn</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-slate-200 transition-colors" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined">person</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+</a>
+</div>
+</div>
+</div>
+</body></html>

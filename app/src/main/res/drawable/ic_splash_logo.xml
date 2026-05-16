@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    System Splash Icon.
+    Using a minimal icon (the "G" shape) for the Android 12 system splash
+    to avoid the cropping issues seen with the full wordmark.
+-->
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/ic_launcher_foreground"
+        android:gravity="center" />
+</layer-list>
